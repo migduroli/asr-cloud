@@ -98,4 +98,7 @@ Los pasos a seguir son los siguientes:
    ![img.png](openvpn-import.png)
    
    Una vez carguemos la configuración, podemos comprobar que nuestra IP se encuentra de 
-   hecho localizada en Londres, GB. Para ello podemos visitar la [web]().
+   hecho localizada en Londres, GB. Para ello podemos visitar la [web](https://whatismyipaddress.com/).
+   
+Para evitar incurrir en gastos innecesarios que acabarían con nuestros créditos
+gratuitos, podemos proceder a la limpieza del proyecto ejecutando el script [clean-all.sh](clean-all.sh).
