@@ -66,6 +66,24 @@ $ gcloud init
 Con esto, deberíamos tener todo listo para empezar a trabajar en el fascinante 
 mundo Cloud ☁️
 
+## Terminales recomendados
+
+Para hacer más agradable la tarea de *shell scripting* recomendamos las siguientes
+terminales según OS:
+
+- Windows:
+  
+    1. [Fluent Terminal](https://www.microsoft.com/es-es/p/fluent-terminal/9p2krlmfxf9t)
+    2. [Windows terminal](https://www.microsoft.com/es-es/p/windows-terminal/9n0dx20hk701?rtc=1)
+    3. [Terminus](https://tabby.sh/)
+    
+- Mac OS:
+
+    1. [iTerm2](https://iterm2.com/) + [OhMyZsh](https://ohmyz.sh/)
+
+- Linxu:
+    1. La terminal nativa + [OhMyZsh](https://ohmyz.sh/)
+
 ## Colaboración
 
 El repositorio está abierto a la colaboración y mejora de los ejemplos, pero siempre siguiendo
