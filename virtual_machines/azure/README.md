@@ -1,5 +1,5 @@
 En este ejemplo vamos a proceder a la creación de una máquina virtual
-en Azure mediante linea de comandos. Para ello podemos proceder tanto desde
+en Azure mediante línea de comandos. Para ello podemos proceder tanto desde
 [azure shell](https://shell.azure.com/bash) como desde local si tenemos 
 instalado y autenticado azure CLI, i.e. el comando `az`.
 
