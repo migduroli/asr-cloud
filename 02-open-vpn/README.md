@@ -45,7 +45,7 @@ Los pasos a seguir son los siguientes:
 4. Estando dentro de la VM procedemos a ejecutar los siguientes comandos:
    
   ```shell
-  $ sudo apt-get update && sudo apt-get install wget -y && wget https://raw.githubusercontent.com/migduroli/asr-cloud/main/02-open_vpn/openvpn-install.sh && chmod a+x openvpn-install.sh 
+  $ sudo apt-get update && sudo apt-get install wget -y && wget https://raw.githubusercontent.com/migduroli/asr-cloud/main/02-open-vpn/openvpn-install.sh && chmod a+x openvpn-install.sh 
   ```
 
 5. A continuación comenzamos con la instalación de OpenVPN:
