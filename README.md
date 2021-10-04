@@ -41,9 +41,9 @@ en la [web](https://cloud.google.com/sdk/gcloud/reference).
 
 ### Software Development Kits: Azure y Google 
 
-Como será costumbre en nuestras prácticas, vamos a trabajar con el terminal,
-tanto en Windows como en sistemas OS. Por ello, lo primero que tenemos que asegurarnos
-es que tenemos instalado el kit de desarrollo del proveedor:
+A medida que avancemos en el curso, será costumbre en nuestras prácticas el trabajar con nuestro
+terminal, tanto en Windows como en sistemas Linux. 
+Por ello, lo primero que tenemos que asegurarnos es que tenemos instalado el kit de desarrollo del proveedor:
 
 - Azure: [Instrucciones de instalación en todos los OS](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 - Google: [Instrucciones de instalación en todos los OS](https://cloud.google.com/sdk/docs/install)
