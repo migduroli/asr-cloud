@@ -35,9 +35,8 @@ Para utilizar el terminal de Google, podemos proceder tan fácilmente como:
 
 Ambas dos opciones nos llevarán a una version online de un terminal que nos va a
 permitir trabajar con los servicios y recursos Cloud de Google de manera programática.
-La referencia de los comandos que podemos usar para estas taréas se puede encontrar
+La referencia de los comandos que podemos usar para estas tareas se puede encontrar
 en la [web](https://cloud.google.com/sdk/gcloud/reference).
-
 
 ### Software Development Kits: Azure y Google 
 
@@ -62,6 +61,10 @@ forma:
 ```shell
 $ gcloud init
 ```
+
+En el caso de Google, para hacer gestión del almacenamiento de una forma programática desde
+nuestro terminal tendremos que instalarnos una librería más: `gsutil`.
+Para ello solo tenemos que seguir las instrucciones facilitadas por Google [aquí](https://cloud.google.com/storage/docs/gsutil_install).
 
 Con esto, deberíamos tener todo listo para empezar a trabajar en el fascinante 
 mundo Cloud ☁️
