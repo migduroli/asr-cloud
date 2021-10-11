@@ -5,7 +5,7 @@ despliegues de aplicaciones (interconectadas) mediante `gcloud`. En este proceso
 automatización vamos a introducir también algunos de los 12-factores (12F) que deben
 componer una aplicación *nativa cloud* (*cloud native* en inglés), e.g., 
 vamos a introducir la praxis de explicitar la configuración de la aplicación en un
-fichero de parametrización, en este caso en concreto será [config.txt](config.txt), 
+fichero de parametrización, en este caso en concreto será [config.txt](config.ini), 
 así como declarar todas las dependencias en un manifiesto, en nuestro caso será
 [requirements.txt](requirements.txt). 
 
@@ -60,7 +60,7 @@ Los pasos necesarios son (ver [deployment.sh](deployment.sh)):
       --quiet
    ```
    Las opciones de configuración de la máquina y de la imagen vienen dadas en el fichero
-   [config.txt](config.txt)
+   [config.txt](config.ini)
    
 3. Contenerizar la aplicación (haciendo `docker build`), pasándole como argumento de construcción
   la IP reservada para Redis, de manera que la App pueda establecer la conexión con ésta:
@@ -74,7 +74,7 @@ Los pasos necesarios son (ver [deployment.sh](deployment.sh)):
   ```
   donde `app_image_uri` se define como `app_image_uri="gcr.io/$PROJECT/$app_img"`, siendo
   `$PROJECT` el UUID de nuestro proyecto, y `$app_img` el nombre de la imagen de nuestra
-  aplicación, que viene explicitado en el archivo de configuración de despliegue [config.txt](config.txt)
+  aplicación, que viene explicitado en el archivo de configuración de despliegue [config.txt](config.ini)
 
 5. Desplegar una VM en GCP con la imagen de la aplicación:
    ```shell

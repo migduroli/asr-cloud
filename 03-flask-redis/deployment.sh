@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "${PWD}/config.txt"
+source "${PWD}/config.ini"
 source "color.sh"
 
 PROJECT=$(gcloud config get-value project)

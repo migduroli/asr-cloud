@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "${PWD}/config.txt"
+source "${PWD}/config.ini"
 source "color.sh"
 
 delete_redis_ip() {
