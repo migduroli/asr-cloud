@@ -1,0 +1,8 @@
+redis_ip="redis-ip"
+redis_server="redis-server"
+redis_image="redis:4.0.11-alpine"
+redis_port="6379"
+machine_type="e2-medium"
+app_name="asr-flask-app"
+app_img="asr-flask"
+app_port="5000"

@@ -1,5 +1,5 @@
 En el siguiente ejercicio vamos a ver como podemos montar nuestro propio
-servidor vpn en GCP usando OpenVPN.
+servidor VPN en GCP usando OpenVPN.
 
 Los pasos a seguir son los siguientes:
 
