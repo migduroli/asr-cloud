@@ -1,3 +1,4 @@
+### Introducción
 El objetivo del siguiente ejemplo es el de introducir Google Kubernetes Engine (GKE),
 un servicio de Kubernetes gestionado y seguro para el despliegue, gestión y
 (auto)escalado de aplicaciones contenerizadas usando la infraesturctura de 
@@ -6,7 +7,7 @@ en un conjunto de VMs (instancias de Google Compute Engine), y desplegaremos
 en éste una aplicación sencilla `hello-world`.
 
 
-### Creación del cluster GKE
+### 1. Creación del cluster GKE
 Lo primero que vamos a hacer es asegurarnos de tener configurada una 
 zona de procesamiento predeterminada. Para establecer nuestra zona de procesamiento
 predeterminada en `europe-west1-b` ejecutaremos el siguiente comando:
@@ -43,7 +44,7 @@ en el mismo. En este ejemplo vamos a proceder a desplegar una aplicación tipo `
 con el ánimo de simplemente mostrar los inicios (que pueden llegar a ser bastante duros)
 con GKE.
 
-### Despliegue y exposición de la aplicación
+### 2. Despliegue y exposición de la aplicación
 
 ⚠️ Para la gestión del cluster necesitaremos tener instalado `kubectl` (the Kubernetes command-line tool).
 You can find the installer [here](https://kubernetes.io/docs/tasks/tools/).
@@ -88,8 +89,14 @@ kubectl get service
 Finalmente, ahora podemos proceder a ver la aplicación en nuestro navegador web
 usando la `[EXTERNAL-IP]` de `hello-server` en `http://[EXTERNAL-IP]:8080`
 
+La creación del cluster, despliegue y exposición de la app se pueden hacer
+simplemente ejecutando [deployment.sh](deployment.sh):
 
-### Borrar el cluster
+```shell
+chmod a+x deployment.sh && ./deployment.sh
+```
+
+### 3. Borrar el cluster
 
 Para borrar el clúster, solo tenemos que ejecutar:
 
@@ -98,3 +105,8 @@ gcloud container clusters delete $CLUSTER_NAME --quiet
 ```
 
 El proceso de borrado del clúster puede llevar unos minutos.
+Este borrado también se podría haber hecho mediante [clean.sh](clean.sh):
+
+```shell
+chmod a+x clean.sh && ./clean.sh
+```
