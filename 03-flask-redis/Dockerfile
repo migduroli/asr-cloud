@@ -1,4 +1,4 @@
-FROM python:3.7.0-alpine3.8
+FROM python:3.7.0-alpine
 
 ARG REDIS_IP
 ENV REDIS_IP_GCP=${REDIS_IP}
