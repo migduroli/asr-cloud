@@ -19,3 +19,19 @@ de muy alta demanda, lo cual forzaremos en nuestro ejemplo para ver
 como estas herramientas hacen posible tener una infraestructura
 completamente flexible y dinámica.
 
+Para ello, vamos a proceder siguiendo los pasos que se enumeran:
+
+* Crearemos un cluster de K8s que estará sirviendo un webserver de apache
+
+* Aplicaremos una política de autoescalado horizontal y vertical para:
+
+    - Reducir el numero de réplicas de un *Deployment* con HPA
+    
+    - Reducir la CPU asignada a un *Deployment* con VPA
+
+* Aplicaremos una política de autoescalado horizontal a nivel de cluster con *Cluster Autoscaler*
+
+* Usaremos NAP para que se cree un pool de nodos optimizado a la carga de nuestro cluster
+
+* Test del comportamiento de las diferentes configuraciones de autoescalado 
+  ante un aumento repentino de demanda
