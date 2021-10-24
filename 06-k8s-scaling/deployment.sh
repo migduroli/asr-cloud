@@ -169,35 +169,35 @@ check_cluster_scaling() {
   kubectl get deployment php-apache
 }
 
-# Provisioning environment:
-#set_compute_zone
-#create_cluster
-#apply_php_apache_manifest
+## 1. Provisioning environment:
+set_compute_zone
+create_cluster
+apply_php_apache_manifest
 
-## Scale pods with HPA:
-#show_php_deployment
-#hpa_autoscale_deployment
-#show_hpa_status
+## 2. Scale pods with HPA:
+show_php_deployment
+hpa_autoscale_deployment
+show_hpa_status
 
-## Scale pods with VPA:
-#show_vpa_status
-#apply_hello_server_deployment
-#show_hello_deployment
-#set_resources_hello_server
-#vpa_autoscale_off_deployment
-#vpa_autoscale_auto_deployment
-#manual_upscale_hello
+## 3. Scale pods with VPA:
+show_vpa_status
+apply_hello_server_deployment
+show_hello_deployment
+set_resources_hello_server
+vpa_autoscale_off_deployment
+vpa_autoscale_auto_deployment
+manual_upscale_hello
 
-## Check everything worked:
-#check_hpa_downsize_replicas
-#check_vpa_downsize_cpu_requests
+## 4. Check everything worked:
+check_hpa_downsize_replicas
+check_vpa_downsize_cpu_requests
 
-## Cluster autoscaler:
-#enable_cluster_autoscaler
-#show_cluster_nodes
+## 5. Cluster autoscaler:
+enable_cluster_autoscaler
+show_cluster_nodes
 
-## Scale with NAP:
-#enable_nap_autoscale
+## 6. Scale with NAP:
+enable_nap_autoscale
 
-## Test with Larger Demand:
+## 7. Test with Larger Demand:
 increase_demand
