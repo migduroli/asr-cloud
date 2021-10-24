@@ -482,6 +482,63 @@ al cluster completo. El NAP puede tardar unos minutos en activarse,
 y a pesar de ello, puede ser que en nuestro ejemplo no entre en
 juego dado el estado actual de nuestro cluster.
 
+### Test con alta demanda
+
+Para ver como los recursos que hemos introducido hasta ahora
+gestionan un pico de demanda, vamos a producirlo artificialmente.
+Para ello, abriremos una nueva terminal y ejecutaremos
+el siguiente comando:
+
+```shell
+$ kubectl run -i --tty load-generator --rm \
+  --image=busybox \
+  --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+```
+Este comando envía un loop infinito de queries a nuestro 
+servicio `php-apache`.
+
+Volvamos a nuestra terminal principal, y tras esperar un par de minutos
+ejecutemos:
+
+```shell
+$ kubectl get hpa
+```
+
+Ahora esperamos de nuevo hasta ver un target por encima
+del 100%. Cuando esto ocurra podemos monitorizar 
+como el cluster se adapta a este incremento de demanda
+ejecutando regularmente:
+
+```shell
+$ kubectl get deployment php-apache
+```
+
+Cuando pasen unos minutos, veremos que ocurren 
+varias cosas:
+
+- Primeramente, nuestro despliegue `php-apache` será 
+  automáticamente escalado mediante el HPA para poder hacer
+  frente al incremento de carga.
+  
+- Después, el cluster autoscaler aprovisionará nuevos nodos
+  para hacer frente al aumento de demanda.
+  
+- Finalmente, el NAP creará un pool de nodos optimizado para
+  los nuevos requerimientos de CPU y memoria de la carga
+  de trabajo actual. Debería ser en este caso una configuración
+  de alta CPU y baja memoria, dado que el test de carga
+  está probando los límites de la CPU.
+  
+
+Con todo esto, tenemos un cluster adaptado para afrontar
+situaciones de muy alta demanda. Sin embargo, ten en cuenta
+el tiempo que le ha llevado al cluster adaptarse al pico
+repentino de demanda. Para muchas aplicaciones, esta perdida
+de disponibilidad puede llegar a ser un problema, que habría
+que resolver con otras opciones, como por ejemplo el uso
+de clusters sobredimensionados con *pause pods*.
+No obstante, esto ya queda fuera del objetivo de este ejemplo. 
+
 ### Liberación de los recursos
 
 Para borrar el clúster, solo tenemos que ejecutar:
