@@ -372,7 +372,7 @@ ya está borrando y reconfigurando el tamaño de los pods.
 Una vez que lo veamos podremos simplemente salir de la espera
 pulsando `Ctrl + c` en nuestro terminal.
 
-### 4. Comprobación de los resultados HPA y VPA
+### 4. Comprobación de los autoescaladores HPA y VPA
 
 #### HPA
 A estas alturas, el HPA ya habrá escalado nuestro despliegue 
@@ -454,4 +454,47 @@ más gráfica.
 
 
 ### 6. Auto aprovisionamiento de nodos
-NAP 
+El autoescalado NAP consiste en añadir nuevos nodos al pool
+de nodos asociado al cluster, pero con el tamaño adecuado para
+adaptarse a la demanda. En ausencia de NAP, el autoecalador
+de cluster crearía nodos con las mismas características
+de los ya existentes, no adaptándose así verticalmente a la
+demanda. Es por ello que el NAP es tan conveniente para un
+uso adecuado de los recursos, más aún cuando tenemos cargas
+de trabajo que son secuenciales (por *batches*), ya que 
+con este modo de escalamiento el pool está optimizado para
+nuestro caso de uso específico.
+
+Para activar NAP en nuestro cluster:
+
+```shell
+gcloud container clusters update $cluster_name \
+    --enable-autoprovisioning \
+    --min-cpu 1 \
+    --min-memory 2 \
+    --max-cpu 45 \
+    --max-memory 160
+```
+
+Donde estamos especificando el mínimo y máximo número de recursos
+de CPU y memoria. Recordemos que esta estrategia es aplicable
+al cluster completo. El NAP puede tardar unos minutos en activarse,
+y a pesar de ello, puede ser que en nuestro ejemplo no entre en
+juego dado el estado actual de nuestro cluster.
+
+### Liberación de los recursos
+
+Para borrar el clúster, solo tenemos que ejecutar:
+
+```shell
+gcloud container clusters delete $cluster_name --quiet
+```
+
+El proceso de borrado del clúster puede llevar unos minutos.
+Este borrado también se podría haber hecho mediante [clean.sh](clean.sh):
+
+```shell
+chmod a+x clean.sh && ./clean.sh
+```
+
+
