@@ -482,7 +482,7 @@ al cluster completo. El NAP puede tardar unos minutos en activarse,
 y a pesar de ello, puede ser que en nuestro ejemplo no entre en
 juego dado el estado actual de nuestro cluster.
 
-### Test con alta demanda
+### 7. Test con alta demanda
 
 Para ver como los recursos que hemos introducido hasta ahora
 gestionan un pico de demanda, vamos a producirlo artificialmente.
@@ -539,7 +539,7 @@ que resolver con otras opciones, como por ejemplo el uso
 de clusters sobredimensionados con *pause pods*.
 No obstante, esto ya queda fuera del objetivo de este ejemplo. 
 
-### Liberación de los recursos
+### 8. Liberación de los recursos
 
 Para borrar el clúster, solo tenemos que ejecutar:
 
