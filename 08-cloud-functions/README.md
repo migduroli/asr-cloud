@@ -86,6 +86,17 @@ curl -X POST $URL \
   -d '{"a": 10, "b":12}'
 ```
 
-which will return to us a random number
-uniformly distributed in the interval [10, 12].
+esto nos devolverá como respuesta un JSON
+con una clave-valor `{"key": "value"}`, donde 
+`value` será un valor aleatorio uniformemente distribuido
+en el intervalo `[10, 12]`.
 
+### Liberación de los recursos
+
+Para liberar recursos, como es ya costumbre, 
+disponemos de un script de limpieza.
+Solo tenemos que ejecutar:
+
+```shell
+chmod a+x clean.sh && ./clean.sh
+```
