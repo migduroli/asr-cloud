@@ -3,7 +3,14 @@ from functions import uniform_random_value as urv
 
 def get_urandom(request):
     """
-    This is a nice wrapper of a hello-world function
+    Returns a uniformly distributed random number provided the
+    bounds of the interval are passed as a JSON load of the
+    request in the form:
+
+        json_load = {"a": 1.123, "b": 2.345}
+
+    The the number returned will be: x ∈ [a,b]
+
     :return: Dict
     """
 
@@ -18,7 +25,7 @@ def get_urandom(request):
         r = request_json
     else:
         print("Something happened with the parsing...")
-        r = {"a": 1.2, "b": 2.3}
+        r = {"a": 0, "b": 1}
 
     print(f"The JSON load has been read: {r}")
     return {"value": urv(r["a"], r["b"])}
@@ -39,4 +46,4 @@ def get_urandom(request):
 ########################
 # Equivalent with CURL
 ########################
-# curl -X POST $URL -H "Content-Type:application/json"  -d '{"a":1, "b":13}'
+# curl -X POST $URL -H "Content-Type:application/json"  -d '{"a":10, "b":12}'
