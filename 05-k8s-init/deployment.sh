@@ -16,16 +16,16 @@ create_cluster() {
 create_and_expose_deployment() {
   echo "$(green_text "[+] Creating and exposing deployment") ..."
   gcloud container clusters get-credentials $cluster_name
-  kubectl create deployment hello-server --image=gcr.io/google-samples/hello-app:1.0
-  kubectl expose deployment hello-server --type=LoadBalancer --port 8080
-  # kubectl create deployment hello-server --image=gcr.io/innate-infusion-327910/supermario
-  # kubectl expose deployment mario-server --type=LoadBalancer --port 8080
+  #kubectl create deployment hello-server --image=gcr.io/google-samples/hello-app:1.0
+  #kubectl expose deployment hello-server --type=LoadBalancer --port 8080
+  kubectl create deployment mario-server --image=gcr.io/innate-infusion-327910/supermario
+  kubectl expose deployment mario-server --type=LoadBalancer --port 8080
   echo "$(green_text "[+] Deployment finished succesfully! 🥳 🥳 🥳")"
 }
 
-set_compute_zone
+#set_compute_zone
 create_cluster
-create_and_expose_deployment
+#create_and_expose_deployment
 
 
 
