@@ -1,0 +1,35 @@
+steps:
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build',
+           '--tag', 'gcr.io/${_PROJECT_ID}/${_PKG}/${_STAGE}/app',
+           '--build-arg', 'STAGE=${_STAGE}',
+           '--file', 'Dockerfile', '.']
+    id: 'build: core'
+
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/${_PROJECT_ID}/${_PKG}/${_STAGE}/app']
+    id: 'push: app'
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: [
+        'run',
+        'deploy',
+        '--image=gcr.io/${_PROJECT_ID}/${_PKG}/${_STAGE}/app',
+        '--region', '${_REGION}',
+        '--platform', 'managed',
+        '--allow-unauthenticated',
+        '--min-instances', '0',
+        '--max-instances', '5',
+        '${_PKG}-api'
+    ]
+    id: 'deploy: app'
+    waitFor: ['push: app']
+
+timeout: 3600s
+
+substitutions:
+  _PROJECT_ID: innate-infusion-327910
+  _REGION: 'europe-west1'
+  _PKG: prototype
