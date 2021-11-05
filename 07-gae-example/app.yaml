@@ -1,0 +1,22 @@
+service: supermario-auto
+
+env: flex
+
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 5
+  max_concurrent_requests: 10
+  cool_down_period_sec: 300
+  cpu_utilization:
+    target_utilization: 0.10
+
+resources:
+  cpu: 2
+  memory_gb: 2
+  disk_size_gb: 10
+
+
+network:
+  forwarded_ports:
+    - 8080:8080
