@@ -56,7 +56,7 @@ def upload_to_bigquery(dataframe, destination_table_id):
     )
 
 
-def run(event, context):
+def ingest_transaction(event, context):
     """The entrypoint of the Cloud Function"""
     bucket_name = event["bucket"]
     blob_name = event["name"]
@@ -81,4 +81,4 @@ if __name__ == "__main__":
         "name": "transaction.csv"
     }
 
-    run(event, None)
+    ingest_transaction(event, None)

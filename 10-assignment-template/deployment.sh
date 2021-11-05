@@ -16,3 +16,12 @@ bq ls transactions || bq mk -d transactions
 
 # Check if table records exists, else it's created
 bq ls transactions | grep records || bq mk --table transactions.records ID:STRING,AMOUNT:FLOAT
+
+# Deployment:
+gcloud functions deploy ingester-transactions \
+        --entry-point=ingest_transaction \
+        --runtime python38 \
+        --trigger-resource asr-cloud-test-01 \
+        --trigger-event google.storage.object.finalize \
+        --memory 512MB \
+        --timeout 60s
