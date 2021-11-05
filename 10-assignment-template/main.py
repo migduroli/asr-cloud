@@ -14,7 +14,7 @@ TABLE_ID = f"{DATASET}.{TABLE}"
 def download_blob_as_dataframe(
         bucket_name,
         source_blob_name,
-        destination_file_name="transaction.csv"):
+        destination_file_name="/tmp/transaction.csv"):
     """Downloads a blob from a bucket and returns it as a DataFrame"""
 
     storage_client = storage.Client()
@@ -76,6 +76,8 @@ def ingest_transaction(event, context):
 
 
 if __name__ == "__main__":
+    # This is just for local testing purposes"
+
     event = {
         "bucket": "asr-cloud-test-01",
         "name": "transaction.csv"
