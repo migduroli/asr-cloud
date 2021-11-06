@@ -50,7 +50,7 @@ the-second-vm  compute.v1.instance  COMPLETED  []
 Para liberar recursos, solo tenemos que ejecutar: 
 
 ```shell
-gcloud deployment-manager deployments delete deployment-with-2-vms
+gcloud deployment-manager deployments delete test-despliegue-dm
 ```
 
 que hará las veces del ya habitual script de limpieza que hemos
@@ -60,7 +60,7 @@ El resultado de la ejecución debería ser algo similar a:
 
 ```shell
 The following deployments will be deleted:
-- deployment-with-2-vms
+- test-despliegue-dm
 
 Do you want to continue (y/N)?  y
 ```
