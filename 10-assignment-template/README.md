@@ -1,6 +1,6 @@
 ### Introducción
 
-En esta práctica vamos a preparar una 
+En este lab vamos a preparar una 
 Cloud Function que será responsable de "ingerir"
 ficheros de transacciones que se volcarán en un 
 Bucket de Google Cloud Storage (como zona de 
