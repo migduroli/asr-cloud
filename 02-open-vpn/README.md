@@ -71,7 +71,14 @@ Los pasos a seguir son los siguientes:
   ```
 
 6. Para continuar, tenemos que descargarnos el fichero del cliente (`LondonVPN.ovpn`) a nuestro
-   directorio local. Para ello:
+   directorio local. Primero tenemos que salirnos de la máquina virtual,
+   para lo que tenemos que ejecutar:
+   
+   ```shell
+   $ exit
+   ```
+   
+   Una vez ya estamos en nuestra terminal:
    
    ```shell
    $ gcloud compute scp \
