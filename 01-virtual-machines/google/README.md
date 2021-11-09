@@ -51,7 +51,11 @@ Para ello:
 
 
 5. Ahora nos podemos proceder ahora a visitar la web que está sirviendo susodicha máquina
-   simplemente abriendo en nuestro explorador web la IP de la máquina.
+   simplemente abriendo en nuestro explorador web la IP de la máquina. 
+   En principio, esto no debería mostrarnos nada porque tenemos que 
+   habilitar el ingreso por el puerto `80` en la red `default`. 
+   En este ejemplo, esta *firewall rule* la creamos mediante el
+   portal web, aunque en proximos labs veremos como hacerlo programáticamente.
 
 ### Limpieza de recursos
 
