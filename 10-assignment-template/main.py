@@ -74,6 +74,8 @@ def ingest_transaction(event, context):
         destination_table_id=TABLE_ID
     )
 
+    print("Ingestion: Finished!")
+
 
 if __name__ == "__main__":
     # This is just for local testing purposes"
