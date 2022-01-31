@@ -3,7 +3,7 @@
 Este repositorio contiene las prácticas (quick-labs) que se siguen en el 
 módulo de Cloud Computing del curso de *Arquitectura de Sistemas en Red - Cloud Computing*,
 que se imparte en el primer curso del Master en Ingeniería de Telecomunicación 
-en la Universidad Pontificia de Comillas.
+en la Universidad Pontificia Comillas.
 
 ## Uso de la consola: cloud shell, cloud console y sdk
 
